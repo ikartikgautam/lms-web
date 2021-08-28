@@ -10,6 +10,7 @@ import { UserService } from '../services/user.service'
 export class HeaderComponent implements OnInit {
 
   @Output() menuClick = new EventEmitter();
+  menuBtn = 'menu';
 
   constructor(private userService: UserService, private route: Router) { }
 
@@ -27,6 +28,8 @@ export class HeaderComponent implements OnInit {
    * Toogle MatSideBar Menu
    */
   toggleSideMenu() {
+    this.menuBtn == 'menu' ? this.menuBtn = 'arrow_back' : this.menuBtn = 'menu';
+    document.getElementById('menu-btn')!.style.rotate = '180deg';
     this.menuClick.emit();
   }
 
