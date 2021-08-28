@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  calEvents = [{ title: 'Assignment 1 submission' }, { title: 'Assignment 2 submission' }]
+
   constructor() { }
 
   ngOnInit(): void {

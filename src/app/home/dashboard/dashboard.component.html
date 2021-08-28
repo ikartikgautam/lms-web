@@ -28,6 +28,21 @@
                 <div class="card">
                     <h2>Calander Schedule</h2>
                     <hr>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="calander-cont">
+                                <mat-calendar></mat-calendar>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-list>
+                                <mat-list-item *ngFor="let event of calEvents" class="list-item">{{event.title}}
+                                </mat-list-item>
+                            </mat-list>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
