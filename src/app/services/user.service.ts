@@ -20,4 +20,8 @@ export class UserService {
     return this.fireauth.signOut();
   }
 
+  getUserType() {
+    // return 
+  }
+
 }

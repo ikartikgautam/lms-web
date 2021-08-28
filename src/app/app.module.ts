@@ -13,13 +13,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { StudentComponent } from './home/student/student.component';
+import { TeacherComponent } from './home/teacher/teacher.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    StudentComponent,
+    TeacherComponent
   ],
   imports: [
     BrowserModule,
