@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { userDataModel } from 'src/app/models/user.model';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -27,14 +28,22 @@ export class GetUserDetailsComponent implements OnInit {
 
   createProfile() {
     let id = this.activeRoute.queryParams.subscribe(params => {
-      console.log(params.id)
-      this.apiService.createNewUserProfile()
-      // .subscribe(res => {
-      // console.log(res)
-      // }, err => {
-      //   console.err(err);
-      // })
-      this.route.navigate(['home']);
+      console.log(params.email)
+
+      let userDetails = new userDataModel();
+      userDetails.email = params.email;
+      userDetails.firstname = this.userDetail.value.firstName;
+      userDetails.lastname = this.userDetail.value.lastName;
+      userDetails.type = this.userDetail.value.teacher;
+      userDetails.dob = this.userDetail.value.dateOfBirth;
+      userDetails.class_in = this.userDetail.value.class;
+
+      this.apiService.createNewUserProfile(userDetails).subscribe(res => {
+        console.log(res)
+        this.route.navigate(['home']);
+      }, err => {
+        console.error(err);
+      })
     })
   }
 
