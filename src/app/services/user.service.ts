@@ -20,8 +20,12 @@ export class UserService {
     return this.fireauth.signOut();
   }
 
+  signUp(email: string, password: string) {
+    return this.fireauth.createUserWithEmailAndPassword(email, password);
+  }
+
   getUserType() {
-    // return 
+    // return
   }
 
 }

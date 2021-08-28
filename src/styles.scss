@@ -49,3 +49,14 @@ body {
 .gb-oneflex {
   flex: 1;
 }
+.gb-flex {
+  display: flex;
+}
+.gb-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.gb-min-height {
+  min-height: 100vh;
+}

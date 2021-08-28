@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { StudentComponent } from './home/student/student.component';
 import { TeacherComponent } from './home/teacher/teacher.component';
+import { GetUserDetailsComponent } from './auth/get-user-details/get-user-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TeacherComponent } from './home/teacher/teacher.component';
     HomeComponent,
     HeaderComponent,
     StudentComponent,
-    TeacherComponent
+    TeacherComponent,
+    GetUserDetailsComponent
   ],
   imports: [
     BrowserModule,

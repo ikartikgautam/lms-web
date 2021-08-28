@@ -1,0 +1,38 @@
+<div class="cont">
+
+    <form (ngSubmit)="createProfile()" class="form-group" [formGroup]="userDetail">
+
+        <h3>Please Enter your details</h3>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="Ex. John" type="text" formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Ex. Marley" type="text" formControlName="lastName">
+        </mat-form-field>
+
+        <label id="type-radio-group">Select your Type</label>
+        <mat-radio-group aria-labelledby="type-radio-group" class="radio-group" formControlName="teacher">
+            <mat-radio-button class="radio-button" value="teacher">Teacher</mat-radio-button>
+            <mat-radio-button class="radio-button" value="student">Student</mat-radio-button>
+        </mat-radio-group>
+
+        <div class="custom-input-group">
+            <label for="birthday">Choose Date of Birth:</label>
+            <input type="date" formControlName="dateOfBirth">
+        </div>
+
+        <mat-form-field appearance="fill" *ngIf="userDetail.value.teacher=='student'" class="full-width">
+            <mat-label>Select Class</mat-label>
+            <mat-select formControlName="class">
+                <mat-option *ngFor="let e of classes" [value]="e">{{e}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <button type="submit" mat-raised-button color="primary">Continue</button>
+
+    </form>
+
+</div>

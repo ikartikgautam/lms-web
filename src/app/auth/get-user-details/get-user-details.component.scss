@@ -1,0 +1,39 @@
+.form-group {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px 2px #80808075;
+
+    width: 100%;
+    max-width: 400px;
+    .full-width {
+        width: 100%;
+    }
+    .radio-group {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+        .radio-button {
+            margin: 5px;
+        }
+    }
+    .custom-input-group {
+        display: flex;
+        flex-direction: column;
+        margin: 12px 0;
+    }
+    button {
+        min-width: 200px;
+        margin: auto;
+        display: block;
+    }
+}
+
+.cont {
+    min-height: 100vh;
+    background-color: whitesmoke;
+}
