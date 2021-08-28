@@ -1,0 +1,14 @@
+.cont {
+    min-height: 100vh;
+}
+.custom-card {
+    padding: 12px;
+    .card {
+        padding: 12px;
+        min-height: 400px;
+        h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+    }
+}

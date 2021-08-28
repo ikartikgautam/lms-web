@@ -2,6 +2,10 @@
     <mat-drawer #drawer class="sidenav" mode="side">
 
         <mat-list>
+            <div class="custom-list">
+                <mat-list-item (click)="navigateTo('/home')">Dashboard</mat-list-item>
+                <mat-divider></mat-divider>
+            </div>
             <div class="custom-list" *ngFor="let e of listItems">
                 <mat-list-item (click)="navigateTo(e.route)">{{e.title}}</mat-list-item>
                 <mat-divider></mat-divider>

@@ -5,3 +5,9 @@
 .cont {
     min-height: 100vh;
 }
+.custom-list {
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(219, 219, 219);
+    }
+}

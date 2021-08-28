@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { StudentComponent } from './home/student/student.component';
 import { TeacherComponent } from './home/teacher/teacher.component';
 import { GetUserDetailsComponent } from './auth/get-user-details/get-user-details.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { GetUserDetailsComponent } from './auth/get-user-details/get-user-detail
     HeaderComponent,
     StudentComponent,
     TeacherComponent,
-    GetUserDetailsComponent
+    GetUserDetailsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
