@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
+    email:{
+        type:String,
+        required:true
+    },
     firstname:{
         type:String,
         required:true,
@@ -11,8 +15,8 @@ const UserSchema = new mongoose.Schema({
     class_in:{
         type:String,
     },
-    teacher:{
-        type:Boolean,
+    type:{
+        type:String,
         required:true
     },
     dob:{
