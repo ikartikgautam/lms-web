@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -20,19 +20,22 @@ export class GetUserDetailsComponent implements OnInit {
 
   classes = [1, 2, 3, 4, 5, 6]
 
-  constructor(private apiService: ApiService, private route: Router) { }
+  constructor(private apiService: ApiService, private route: Router, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
   createProfile() {
-    this.apiService.createNewUserProfile()
-    // .subscribe(res => {
-    // console.log(res)
-    // }, err => {
-    //   console.err(err);
-    // })
-    this.route.navigate(['home']);
+    let id = this.activeRoute.queryParams.subscribe(params => {
+      console.log(params.id)
+      this.apiService.createNewUserProfile()
+      // .subscribe(res => {
+      // console.log(res)
+      // }, err => {
+      //   console.err(err);
+      // })
+      this.route.navigate(['home']);
+    })
   }
 
 }

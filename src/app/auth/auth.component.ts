@@ -43,8 +43,8 @@ export class AuthComponent implements OnInit {
     }
 
     this.userService.signUp(formData.email, formData.password).then(user => {
-      console.log(user);
-      this.route.navigate(['auth/createProfile']);
+      // console.log(user.user!.uid);
+      this.route.navigate(['auth/createProfile'], { queryParams: { id: user.user!.uid } });
     }, err => {
       console.error(err);
     })
