@@ -7,7 +7,7 @@ const path = require('path')
 const usersRoute = require('./routes/api/users')
 
 
-// connectDB();
+connectDB();
 
 app.use(express.json({extended:false}));
 
