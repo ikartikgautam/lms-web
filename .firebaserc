@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "flipr-lms": {
+      "hosting": {
+        "lms": [
+          "flipr-lms"
+        ]
+      }
+    }
+  }
+}
