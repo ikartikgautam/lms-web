@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service'
 
@@ -8,6 +8,8 @@ import { UserService } from '../services/user.service'
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+  @Output() menuClick = new EventEmitter();
 
   constructor(private userService: UserService, private route: Router) { }
 
@@ -19,6 +21,13 @@ export class HeaderComponent implements OnInit {
       console.log(res);
       this.route.navigate(['/']);
     })
+  }
+
+  /**
+   * Toogle MatSideBar Menu
+   */
+  toggleSideMenu() {
+    this.menuClick.emit();
   }
 
 }

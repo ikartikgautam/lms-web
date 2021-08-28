@@ -8,6 +8,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 
 const matModules: any[] = [
     MatInputModule,
@@ -18,7 +21,10 @@ const matModules: any[] = [
     MatTabsModule,
     MatRadioModule,
     MatSelectModule,
-    MatChipsModule
+    MatChipsModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatListModule
 ];
 
 @NgModule({

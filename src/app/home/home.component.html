@@ -1,2 +1,16 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<mat-drawer-container class="cont" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+
+        <mat-list>
+            <div class="custom-list" *ngFor="let e of listItems">
+                <mat-list-item (click)="navigateTo(e.route)">{{e.title}}</mat-list-item>
+                <mat-divider></mat-divider>
+            </div>
+        </mat-list>
+
+    </mat-drawer>
+    <div>
+        <app-header (menuClick)="drawer.toggle()"></app-header>
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>
