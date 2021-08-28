@@ -3,6 +3,6 @@ export class userDataModel {
     firstname!: string;
     lastname!: string;
     class_in!: string;
-    type!: boolean;
+    type!: string;
     dob!: string;
 }

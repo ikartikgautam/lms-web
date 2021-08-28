@@ -16,7 +16,7 @@ export class GetUserDetailsComponent implements OnInit {
     lastName: new FormControl(''),
     dateOfBirth: new FormControl(''),
     class: new FormControl(''),
-    teacher: new FormControl(''),
+    type: new FormControl(''),
   });
 
   classes = [1, 2, 3, 4, 5, 6]
@@ -34,7 +34,7 @@ export class GetUserDetailsComponent implements OnInit {
       userDetails.email = params.email;
       userDetails.firstname = this.userDetail.value.firstName;
       userDetails.lastname = this.userDetail.value.lastName;
-      userDetails.type = this.userDetail.value.teacher;
+      userDetails.type = this.userDetail.value.type;
       userDetails.dob = this.userDetail.value.dateOfBirth;
       userDetails.class_in = this.userDetail.value.class;
 
