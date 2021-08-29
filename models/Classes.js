@@ -18,7 +18,8 @@ const ClassesSchema = new mongoose.Schema({
         type:String,
     },
     students_enrolled:[{
-        type:String,
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'user'
     }],
     time:[{
         type:String,

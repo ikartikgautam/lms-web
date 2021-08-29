@@ -17,6 +17,46 @@ router.get('/', (req, res, next) => {
         })
 })
 
+
+router.get('/students',(req,res,next)=>{
+    User.find({type:'student'})
+    .then((students)=>{
+        return res.json(students)
+    })
+    .catch(err=>{
+        console.log(err.message)
+        res.status(500).send('server error')
+    })
+
+})
+
+router.get('/students/:class_no',(req,res,next)=>{
+
+
+    User.find({type:'student',class_in:req.params.class_no})
+    .then((students)=>{
+        return res.json(students)
+    })
+    .catch(err=>{
+        console.log(err.message)
+        res.status(500).send('server error')
+    })
+
+})
+
+router.get('/teachers',(req,res,next)=>{
+    User.find({type:'teacher'})
+    .then((teacher)=>{
+        return res.json(teacher)
+    })
+    .catch(err=>{
+        console.log(err.message)
+        res.status(500).send('server error')
+    })
+
+})
+
+
 router.post('/', (req, res, next) => {
 
     const { email, firstname, lastname, class_in, type, dob } = req.body;

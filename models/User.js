@@ -23,7 +23,11 @@ const UserSchema = new mongoose.Schema({
     },
     dob:{
         type:Date
-    }
+    },
+    couses_enrolled:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'classes'
+    }]
 });
 
 module.exports = User = mongoose.model('user',UserSchema);
