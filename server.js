@@ -4,6 +4,7 @@ const app = express();
 const path = require('path')
 
 const usersRoute = require('./routes/api/users')
+const classRoute = require('./routes/api/classes')
 
 
 connectDB();
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
   });
 
 app.use('/api/users', usersRoute);
+app.use('/api/createclass',classRoute,)
 
 const PORT = 5000;
 

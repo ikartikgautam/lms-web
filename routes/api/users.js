@@ -9,6 +9,8 @@ router.get('/', (req, res, next) => {
     User.findOne({ email: req.query.email })
         .then((user) => {
             if (user) {
+                req.user = user;
+                console.log(req.user.id)
                 return res.status(200).json({ meta: user, message: "User found" });
             }
             return res.status(404).json({ meta: null, message: "User not found" });

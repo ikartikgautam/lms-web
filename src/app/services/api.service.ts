@@ -36,7 +36,7 @@ export class ApiService {
   }
 
   createNewClass(body: classDataModel) {
-    return this.http.post(this._baseUrl + '/api/users', body);
+    return this.http.post(this._baseUrl + '/api/createclass', body);
   }
 
 }
