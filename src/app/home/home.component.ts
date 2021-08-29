@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { userDataModel } from '../models/user.model';
+import { ApiService } from '../services/api.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -11,34 +13,43 @@ export class HomeComponent implements OnInit {
 
   listItems: any[] = [];
 
-  constructor(private route: Router, private activeRoute: ActivatedRoute, private userService: UserService) {
-    // this.userService.getUserType().subscribe(userType => {
-    //   if (userType == 'teacher') {
-    //     this.route.navigate(['teacher'], { relativeTo: this.activeRoute })
-    //   } else if (userType == 'student') {
-    //     this.route.navigate(['student'], { relativeTo: this.activeRoute })
-    //   }
-    // })
+  constructor(private route: Router, private activeRoute: ActivatedRoute, private userService: UserService, private apiService: ApiService) {
+    this.apiService.getUserData().then((res: any) => {
+      if (res.status) {
+        let user = new userDataModel();
+        user.setValues(res.data);
+        this.userService.userData = user;
+        this.assignUserType(this.userService.userData.type);
+      } else {
+        console.error(res);
+        // show error
+      }
+    })
 
-    if (1 == 1) {
+  }
+
+  ngOnInit(): void {
+  }
+
+  assignUserType(userType: string) {
+    console.log(userType)
+    if (userType == 'teacher') {
       this.listItems = [
         { title: 'Create Class', route: '' },
         { title: 'Manage Classes', route: '' },
         { title: 'Manage Assignments', route: '' },
         { title: 'Manage Tests', route: '' },
       ];
-    } else {
+      this.route.navigate(['teacher'], { relativeTo: this.activeRoute })
+    } else if (userType == 'student') {
       this.listItems = [
         { title: 'Assignments', route: '' },
         { title: 'Tests & Quizes', route: '' },
         { title: 'Time Table', route: '' },
         { title: 'See Results', route: '' },
       ];
+      this.route.navigate(['student'], { relativeTo: this.activeRoute })
     }
-
-  }
-
-  ngOnInit(): void {
   }
 
   navigateTo(route: string) {

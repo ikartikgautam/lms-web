@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { userDataModel } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  userData = new userDataModel();
 
   constructor(private fireauth: AngularFireAuth) { }
 
