@@ -24,7 +24,7 @@ const UserSchema = new mongoose.Schema({
     dob:{
         type:Date
     },
-    couses_enrolled:[{
+    courses_enrolled:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:'classes'
     }]
