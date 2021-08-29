@@ -14,7 +14,7 @@
         </mat-form-field>
 
         <label id="type-radio-group">Select your Type</label>
-        <mat-radio-group aria-labelledby="type-radio-group" class="radio-group" formControlName="teacher">
+        <mat-radio-group aria-labelledby="type-radio-group" class="radio-group" formControlName="type">
             <mat-radio-button class="radio-button" value="teacher">Teacher</mat-radio-button>
             <mat-radio-button class="radio-button" value="student">Student</mat-radio-button>
         </mat-radio-group>
@@ -24,7 +24,7 @@
             <input type="date" formControlName="dateOfBirth">
         </div>
 
-        <mat-form-field appearance="fill" *ngIf="userDetail.value.teacher=='student'" class="full-width">
+        <mat-form-field appearance="fill" *ngIf="userDetail.value.type=='student'" class="full-width">
             <mat-label>Select Class</mat-label>
             <mat-select formControlName="class">
                 <mat-option *ngFor="let e of classes" [value]="e">{{e}}</mat-option>

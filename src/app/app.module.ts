@@ -17,6 +17,7 @@ import { StudentComponent } from './home/student/student.component';
 import { TeacherComponent } from './home/teacher/teacher.component';
 import { GetUserDetailsComponent } from './auth/get-user-details/get-user-details.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DashboardComponent } from './home/dashboard/dashboard.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
