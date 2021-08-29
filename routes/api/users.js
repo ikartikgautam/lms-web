@@ -1,19 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-
-
 const User = require('../../models/User')
-
-
-// router.use(cors());
-// router.use(function (req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header(
-//         "Access-Control-Allow-Headers",
-//         "Origin, X-Requested-With, Content-Type, Accept"
-//     );
-// });
 
 
 router.get('/',(req,res,next)=>{
@@ -41,6 +29,8 @@ router.post('/',(req,res,next)=>{
                  return user.save()
 
         .then((user)=>{
+            req.user = user;
+            console.log(req.user.id)
             return res.json(user)
         })
    
