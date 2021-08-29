@@ -1,0 +1,24 @@
+<div class="cont">
+
+    <form (ngSubmit)="submit()" class="form-group" [formGroup]="classDetails">
+
+        <h3>Enter details of new class</h3>
+
+        <mat-form-field appearance="fill" class="input-group">
+            <mat-label>Name of Class</mat-label>
+            <input matInput placeholder="Ex. Maths" type="text" formControlName="name">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-group">
+            <mat-label>Class Code</mat-label>
+            <input matInput placeholder="Ex. MTS112" type="text" formControlName="code">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-group">
+            <mat-label>Class Description</mat-label>
+            <input matInput placeholder="Ex. Maths class is taken herer" type="text" formControlName="desc">
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="primary">Create Class</button>
+
+    </form>
+
+</div>

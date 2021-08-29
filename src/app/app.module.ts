@@ -18,6 +18,7 @@ import { TeacherComponent } from './home/teacher/teacher.component';
 import { GetUserDetailsComponent } from './auth/get-user-details/get-user-details.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateClassComponent } from './home/teacher/create-class/create-class.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     StudentComponent,
     TeacherComponent,
     GetUserDetailsComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateClassComponent
   ],
   imports: [
     BrowserModule,

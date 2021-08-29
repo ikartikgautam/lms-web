@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
     console.log(userType)
     if (userType == 'teacher') {
       this.listItems = [
-        { title: 'Create Class', route: '' },
+        { title: 'Create Class', route: 'createclass' },
         { title: 'Manage Classes', route: '' },
         { title: 'Manage Assignments', route: '' },
         { title: 'Manage Tests', route: '' },
@@ -53,6 +53,7 @@ export class HomeComponent implements OnInit {
   }
 
   navigateTo(route: string) {
+    console.log(route)
     this.route.navigate([route], { relativeTo: this.activeRoute })
   }
 

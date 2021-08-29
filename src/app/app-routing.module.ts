@@ -5,6 +5,7 @@ import { GetUserDetailsComponent } from './auth/get-user-details/get-user-detail
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { StudentComponent } from './home/student/student.component';
+import { CreateClassComponent } from './home/teacher/create-class/create-class.component';
 import { TeacherComponent } from './home/teacher/teacher.component';
 import { AuthGuard } from './services/auth.guard';
 
@@ -15,7 +16,9 @@ const routes: Routes = [
     children: [
       { path: '', component: DashboardComponent },
       { path: 'student', component: StudentComponent },
-      { path: 'teacher', component: TeacherComponent }
+      { path: 'teacher', component: TeacherComponent },
+      // Teacher routes
+      { path: 'createclass', component: CreateClassComponent },
     ]
   },
   { path: 'auth', component: AuthComponent },

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { classDataModel } from '../models/class.model';
 import { userDataModel } from '../models/user.model';
 import { UserService } from './user.service';
 
@@ -31,6 +32,10 @@ export class ApiService {
    * Create new user profile in DB
    */
   createNewUserProfile(body: userDataModel) {
+    return this.http.post(this._baseUrl + '/api/users', body);
+  }
+
+  createNewClass(body: classDataModel) {
     return this.http.post(this._baseUrl + '/api/users', body);
   }
 
