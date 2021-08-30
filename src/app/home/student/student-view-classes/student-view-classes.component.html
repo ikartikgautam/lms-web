@@ -1,1 +1,14 @@
-<p>student-view-classes works!</p>
+<div class="container">
+    <h2>Classes Enrolled in</h2>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let e of classes">
+            <div class="card">
+                <div class="course-img"></div>
+                <div class="desc">
+                    <h4>{{e.name}}</h4>
+                    <p>{{e.code}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

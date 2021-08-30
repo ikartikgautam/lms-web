@@ -6,6 +6,7 @@ export class userDataModel {
     type!: string;
     dob!: string;
     _id!: string;
+    courses_enrolled!: any[];
 
     setValues(obj: any) {
         this._id = obj._id;
@@ -15,6 +16,9 @@ export class userDataModel {
         this.class_in = obj.class_in;
         this.type = obj.type;
         this.dob = obj.dob;
+        if (obj.courses_enrolled) {
+            this.courses_enrolled = obj.courses_enrolled;
+        }
     }
 
 }

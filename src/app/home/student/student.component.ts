@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-student',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
-  constructor() { }
+
+  constructor() {
+
+    // this.apiService.getUserData().then((data: any) => {
+    //   console.log(data['data'])
+    // })
+
+  }
 
   ngOnInit(): void {
   }

@@ -54,6 +54,10 @@ export class HomeComponent implements OnInit {
   }
 
   navigateTo(route: string) {
+    if (route == '/home') {
+      this.route.navigate([`${route}/${this.userService.userData.type}`], { relativeTo: this.activeRoute })
+      return
+    }
     console.log(route)
     this.route.navigate([route], { relativeTo: this.activeRoute })
   }

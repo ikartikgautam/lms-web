@@ -7,6 +7,15 @@
                 <div class="card">
                     <h2>Subjects</h2>
                     <hr>
+
+                    <mat-list>
+                        <mat-list-item *ngFor="let class of classes">
+                            <span>{{class.name}}</span>
+                            <span class="gb-oneflex"></span>
+                            <span>{{class.code}}</span>
+                        </mat-list-item>
+                    </mat-list>
+
                 </div>
             </div>
             <div class="col-md-6 custom-card">

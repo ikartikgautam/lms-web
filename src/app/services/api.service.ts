@@ -63,4 +63,8 @@ export class ApiService {
     return this.http.post(this._baseUrl + `/api/createclass/add/${class_code}?email=${this.userService.userData.email}`, { selected_students: student_id });
   }
 
+  getSpecificClassData(class_id: string) {
+    return this.http.get(this._baseUrl + `/api/createclass/getClass/${class_id}?email=${this.userService.userData.email}`);
+  }
+
 }
