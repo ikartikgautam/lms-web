@@ -1,8 +1,11 @@
 <div class="class-bar">
     <span class="gb-oneflex"></span>
     <div>
-        <h2>{{classData.name}}</h2>
-        <h3>{{classData.code}}</h3>
+        <h2>{{classData!.name}}</h2>
+        <h3>{{classData!.code}}</h3>
+        <button (click)="openClassSettings()" mat-fab>
+            <mat-icon>settings</mat-icon>
+        </button>
     </div>
     <span class="gb-oneflex"></span>
 </div>

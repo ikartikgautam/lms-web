@@ -43,6 +43,7 @@ export class HomeComponent implements OnInit {
       this.route.navigate(['teacher'], { relativeTo: this.activeRoute })
     } else if (userType == 'student') {
       this.listItems = [
+        { title: 'View Classes', route: 'student-view-classes' },
         { title: 'Assignments', route: '' },
         { title: 'Tests & Quizes', route: '' },
         { title: 'Time Table', route: '' },

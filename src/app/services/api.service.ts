@@ -47,4 +47,20 @@ export class ApiService {
     return this.http.get(this._baseUrl + `/api/createclass/${class_code}?email=${this.userService.userData.email}`);
   }
 
+  getStudentClasses() {
+    this.http.get('');
+  }
+
+  getStudentsEnrolled(class_code: string) {
+    return this.http.get(this._baseUrl + `/api/users/students/${class_code}?email=${this.userService.userData.email}`);
+  }
+
+  getAllStudents() {
+    return this.http.get(this._baseUrl + `/api/users/students?email=${this.userService.userData.email}`);
+  }
+
+  addStudentToClass(class_code: string, student_id: string) {
+    return this.http.post(this._baseUrl + `/api/createclass/add/${class_code}?email=${this.userService.userData.email}`, { selected_students: student_id });
+  }
+
 }

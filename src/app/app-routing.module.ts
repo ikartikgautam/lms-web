@@ -4,6 +4,7 @@ import { AuthComponent } from './auth/auth.component';
 import { GetUserDetailsComponent } from './auth/get-user-details/get-user-details.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
+import { StudentViewClassesComponent } from './home/student/student-view-classes/student-view-classes.component';
 import { StudentComponent } from './home/student/student.component';
 import { CreateClassComponent } from './home/teacher/create-class/create-class.component';
 import { ManageClassComponent } from './home/teacher/manage-class/manage-class.component';
@@ -23,6 +24,8 @@ const routes: Routes = [
       { path: 'createclass', component: CreateClassComponent },
       { path: 'manageclass', component: ManageClassComponent },
       { path: 'viewClass', component: ViewClassComponent },
+      // student routes
+      { path: 'student-view-classes', component: StudentViewClassesComponent },
     ]
   },
   { path: 'auth', component: AuthComponent },

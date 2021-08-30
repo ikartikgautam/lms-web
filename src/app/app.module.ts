@@ -21,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreateClassComponent } from './home/teacher/create-class/create-class.component';
 import { ManageClassComponent } from './home/teacher/manage-class/manage-class.component';
 import { ViewClassComponent } from './home/teacher/manage-class/view-class/view-class.component';
+import { StudentViewClassesComponent } from './home/student/student-view-classes/student-view-classes.component';
+import { ClassSettingsComponent } from './home/teacher/manage-class/view-class/class-settings/class-settings.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ViewClassComponent } from './home/teacher/manage-class/view-class/view-
     DashboardComponent,
     CreateClassComponent,
     ManageClassComponent,
-    ViewClassComponent
+    ViewClassComponent,
+    StudentViewClassesComponent,
+    ClassSettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,9 @@ import { ViewClassComponent } from './home/teacher/manage-class/view-class/view-
     ReactiveFormsModule,
     MaterialModule,
     HttpClientModule
+  ],
+  entryComponents: [
+    ClassSettingsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
