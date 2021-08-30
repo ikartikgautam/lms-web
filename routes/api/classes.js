@@ -56,7 +56,7 @@ router.post('/add/:code', auth, (req, res, next) => {
                         console.log(user.id)
                         cla.students_enrolled.unshift(user.id)
                         console.log(cla.id)
-                        user.courses_enrolled = cla.id;
+                        user.courses_enrolled.unshift(cla.id);
                         user.save()
                         return cla.save()
                     }
