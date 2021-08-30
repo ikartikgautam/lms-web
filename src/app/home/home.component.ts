@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
     if (userType == 'teacher') {
       this.listItems = [
         { title: 'Create Class', route: 'createclass' },
-        { title: 'Manage Classes', route: '' },
+        { title: 'Manage Classes', route: 'manageclass' },
         { title: 'Manage Assignments', route: '' },
         { title: 'Manage Tests', route: '' },
       ];

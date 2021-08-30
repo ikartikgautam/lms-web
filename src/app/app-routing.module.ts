@@ -6,6 +6,8 @@ import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { StudentComponent } from './home/student/student.component';
 import { CreateClassComponent } from './home/teacher/create-class/create-class.component';
+import { ManageClassComponent } from './home/teacher/manage-class/manage-class.component';
+import { ViewClassComponent } from './home/teacher/manage-class/view-class/view-class.component';
 import { TeacherComponent } from './home/teacher/teacher.component';
 import { AuthGuard } from './services/auth.guard';
 
@@ -19,6 +21,8 @@ const routes: Routes = [
       { path: 'teacher', component: TeacherComponent },
       // Teacher routes
       { path: 'createclass', component: CreateClassComponent },
+      { path: 'manageclass', component: ManageClassComponent },
+      { path: 'viewClass', component: ViewClassComponent },
     ]
   },
   { path: 'auth', component: AuthComponent },

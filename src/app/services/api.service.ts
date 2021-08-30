@@ -36,7 +36,15 @@ export class ApiService {
   }
 
   createNewClass(body: classDataModel) {
-    return this.http.post(this._baseUrl + '/api/createclass', body);
+    return this.http.post(this._baseUrl + `/api/createclass?email=${this.userService.userData.email}`, body);
+  }
+
+  getClasses() {
+    return this.http.get(this._baseUrl + `/api/createclass?email=${this.userService.userData.email}`);
+  }
+
+  getClassData(class_code: string) {
+    return this.http.get(this._baseUrl + `/api/createclass/${class_code}?email=${this.userService.userData.email}`);
   }
 
 }

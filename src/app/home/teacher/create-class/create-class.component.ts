@@ -22,8 +22,12 @@ export class CreateClassComponent implements OnInit {
   }
 
   submit() {
-    let user = new classDataModel();
-    this.apiService.createNewClass(user).subscribe((res) => {
+    let formData = this.classDetails.value;
+    let classData = new classDataModel();
+    classData.name = formData.name;
+    classData.code = formData.code;
+    classData.desc = formData.desc;
+    this.apiService.createNewClass(classData).subscribe((res) => {
       console.log(res);
     })
   }

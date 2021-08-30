@@ -5,8 +5,10 @@ export class userDataModel {
     class_in!: string;
     type!: string;
     dob!: string;
+    _id!: string;
 
     setValues(obj: any) {
+        this._id = obj._id;
         this.email = obj.email;
         this.firstname = obj.firstname;
         this.lastname = obj.lastname;

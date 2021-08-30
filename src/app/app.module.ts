@@ -19,6 +19,8 @@ import { GetUserDetailsComponent } from './auth/get-user-details/get-user-detail
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateClassComponent } from './home/teacher/create-class/create-class.component';
+import { ManageClassComponent } from './home/teacher/manage-class/manage-class.component';
+import { ViewClassComponent } from './home/teacher/manage-class/view-class/view-class.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CreateClassComponent } from './home/teacher/create-class/create-class.c
     TeacherComponent,
     GetUserDetailsComponent,
     DashboardComponent,
-    CreateClassComponent
+    CreateClassComponent,
+    ManageClassComponent,
+    ViewClassComponent
   ],
   imports: [
     BrowserModule,
