@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { classDataModel } from '../models/class.model';
 import { userDataModel } from '../models/user.model';
 import { UserService } from './user.service';
@@ -11,7 +12,7 @@ export class ApiService {
 
   _baseUrl = 'http://localhost:5000';
 
-  constructor(private http: HttpClient, private userService: UserService) { }
+  constructor(private http: HttpClient, private userService: UserService, private fireStorage: AngularFireStorage) { }
 
   /**
    * Get user data stored in DB
@@ -44,7 +45,7 @@ export class ApiService {
   }
 
   getClassData(class_code: string) {
-    return this.http.get(this._baseUrl + `/api/createclass/${class_code}?email=${this.userService.userData.email}`);
+    return this.http.get(this._baseUrl + `/api/createclass?code=${class_code}&email=${this.userService.userData.email}`);
   }
 
   getStudentClasses() {
@@ -65,6 +66,14 @@ export class ApiService {
 
   getSpecificClassData(class_id: string) {
     return this.http.get(this._baseUrl + `/api/createclass/getClass/${class_id}?email=${this.userService.userData.email}`);
+  }
+
+  uploadFileOnFirebase(fileName: string, path: string, fileBlob: any) {
+    return this.fireStorage.upload(`${path}/${fileName}`, fileBlob);
+  }
+
+  scheduleClass(class_code: string, body: any) {
+    return this.http.post(this._baseUrl + `/api/createclass/schedule?code=${class_code}&email=${this.userService.userData.email}`, body);
   }
 
 }

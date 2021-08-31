@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
       this.listItems = [
         { title: 'Create Class', route: 'createclass' },
         { title: 'Manage Classes', route: 'manageclass' },
-        { title: 'Manage Assignments', route: '' },
+        { title: 'Manage Assignments', route: 'manageAssignments' },
         { title: 'Manage Tests', route: '' },
       ];
       this.route.navigate(['teacher'], { relativeTo: this.activeRoute })

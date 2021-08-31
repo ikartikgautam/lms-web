@@ -9,3 +9,9 @@ export class classDataModel {
     _id!: string;
 
 }
+export class scheduleClassModel {
+    title!: string;
+    start_time!: string;
+    end_time!: string;
+    date!: string;
+}

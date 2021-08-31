@@ -1,0 +1,25 @@
+<div mat-dialog-content>
+
+    <form (ngSubmit)="submit()" [formGroup]="ass_det">
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Title of Assignment</mat-label>
+            <input matInput formControlName="title">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Select Class to Assign to</mat-label>
+            <mat-select formControlName="class">
+                <mat-option *ngFor="let e of classes" [value]="e">{{e}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="custom-input-group">
+            <label for="birthday">Due Date:</label>
+            <input type="date" formControlName="due_date">
+        </div>
+        <button (click)="createAssignments()" type="button" mat-flat-button>Upload Assignment</button>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</div>

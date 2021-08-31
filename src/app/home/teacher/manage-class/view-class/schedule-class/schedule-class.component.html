@@ -1,0 +1,40 @@
+<div mat-dialog-content>
+
+    <h1>Schedule Class</h1>
+
+    <form (ngSubmit)="submit()" [formGroup]="classDet">
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Topic of Class</mat-label>
+            <input matInput type="text" formControlName="topic">
+        </mat-form-field>
+
+        <div class="row">
+            <div class="custom-input-group full-width col-md-6">
+                <label for="startTime">Select Start time:</label>
+                <input type="time" id="startTime" formControlName="start">
+            </div>
+
+            <div class="custom-input-group full-width col-md-6">
+                <label for="endTime">Select End time:</label>
+                <input type="time" id="endTime" formControlName="end">
+            </div>
+        </div>
+
+        <div class="custom-input-group full-width">
+            <label for="birthday">Choose Date:</label>
+            <input type="date" formControlName="date">
+        </div>
+
+        <!-- <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Select Class</mat-label>
+            <mat-select formControlName="class">
+                <mat-option *ngFor="let e of classes" [value]="e">{{e}}</mat-option>
+            </mat-select>
+        </mat-form-field> -->
+
+        <button type="submit" mat-raised-button color="primary">Schedule</button>
+
+    </form>
+
+</div>

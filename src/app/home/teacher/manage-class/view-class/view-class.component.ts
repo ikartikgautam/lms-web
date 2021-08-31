@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { classDataModel } from 'src/app/models/class.model';
 import { ApiService } from 'src/app/services/api.service';
 import { ClassSettingsComponent } from './class-settings/class-settings.component';
+import { ScheduleClassComponent } from './schedule-class/schedule-class.component';
 
 @Component({
   selector: 'app-view-class',
@@ -29,6 +30,10 @@ export class ViewClassComponent implements OnInit {
 
   openClassSettings() {
     this.dialog.open(ClassSettingsComponent, { data: this.classData })
+  }
+
+  scheduleClass() {
+    this.dialog.open(ScheduleClassComponent, { data: this.classData })
   }
 
 }

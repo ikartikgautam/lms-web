@@ -23,6 +23,10 @@ import { ManageClassComponent } from './home/teacher/manage-class/manage-class.c
 import { ViewClassComponent } from './home/teacher/manage-class/view-class/view-class.component';
 import { StudentViewClassesComponent } from './home/student/student-view-classes/student-view-classes.component';
 import { ClassSettingsComponent } from './home/teacher/manage-class/view-class/class-settings/class-settings.component';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { ManageAssignmentsComponent } from './home/teacher/manage-assignments/manage-assignments.component';
+import { CreateAssignmentComponent } from './home/teacher/manage-assignments/create-assignment/create-assignment.component';
+import { ScheduleClassComponent } from './home/teacher/manage-class/view-class/schedule-class/schedule-class.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,10 @@ import { ClassSettingsComponent } from './home/teacher/manage-class/view-class/c
     ManageClassComponent,
     ViewClassComponent,
     StudentViewClassesComponent,
-    ClassSettingsComponent
+    ClassSettingsComponent,
+    ManageAssignmentsComponent,
+    CreateAssignmentComponent,
+    ScheduleClassComponent
   ],
   imports: [
     BrowserModule,
@@ -48,10 +55,13 @@ import { ClassSettingsComponent } from './home/teacher/manage-class/view-class/c
     AngularFireAuthModule,
     ReactiveFormsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireStorageModule
   ],
   entryComponents: [
-    ClassSettingsComponent
+    ClassSettingsComponent,
+    CreateAssignmentComponent,
+    ScheduleClassComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { StudentViewClassesComponent } from './home/student/student-view-classes/student-view-classes.component';
 import { StudentComponent } from './home/student/student.component';
 import { CreateClassComponent } from './home/teacher/create-class/create-class.component';
+import { ManageAssignmentsComponent } from './home/teacher/manage-assignments/manage-assignments.component';
 import { ManageClassComponent } from './home/teacher/manage-class/manage-class.component';
 import { ViewClassComponent } from './home/teacher/manage-class/view-class/view-class.component';
 import { TeacherComponent } from './home/teacher/teacher.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
       // Teacher routes
       { path: 'createclass', component: CreateClassComponent },
       { path: 'manageclass', component: ManageClassComponent },
+      { path: 'manageAssignments', component: ManageAssignmentsComponent },
       { path: 'viewClass', component: ViewClassComponent },
       // student routes
       { path: 'student-view-classes', component: StudentViewClassesComponent },

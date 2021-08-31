@@ -45,30 +45,31 @@ router.get('/code', auth, (req, res, next) => {
 })
 
 
-router.post('/schedule',auth,(req, res, next) => {
-    
-    const {title,start_time,end_time} = req.body;
+router.post('/schedule', auth, (req, res, next) => {
+
+    const { title, start_time, end_time, date } = req.body;
     const classfield = {
         title,
         start_time,
-        end_time
+        end_time,
+        date
     };
 
-    Classes.findOne({code:req.query.code})
-    .then((cla)=>{
-        
-        cla.details.unshift(classfield);
-        return cla.save()
+    Classes.findOne({ code: req.query.code })
+        .then((cla) => {
 
-        .then((cla)=>{
-            return res.json(cla)
-    })
-    })
+            cla.details.unshift(classfield);
+            return cla.save()
 
-    .catch(err => {
-        console.log(err.message);
-        res.status(500).send("server error")
-    })
+                .then((cla) => {
+                    return res.json(cla)
+                })
+        })
+
+        .catch(err => {
+            console.log(err.message);
+            res.status(500).send("server error")
+        })
 
 })
 
