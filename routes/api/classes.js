@@ -4,6 +4,7 @@ const router = express.Router();
 const User = require('../../models/User')
 const Classes = require('../../models/Classes')
 const auth = require('../../middleware/auth');
+const { route } = require('./users');
 
 
 
@@ -138,6 +139,25 @@ router.post('/', auth, (req, res, next) => {
         })
 
 })
+
+
+// router.delete('/removeuser',auth ,(req,res,next)=>{
+//     User.find({email:req.query.emailst})
+//     .then((user)=>{
+//         console.log(user)
+//         const removeindex = user.courses_enrolled.map(item).indexOf(req.query.idcla)
+//         user.courses_enrolled.splice(removeindex,1)
+//         user.save()
+//         Classes.find({code:req.query.params})
+//         .then((cla)=>{
+//             const removein = cla.students_enrolled.ma.map(item=>item.id).indexOf(user.id)
+//             cla.removein.splice(removein,1)
+//             return cla.save()
+//         })
+//     })
+
+
+// } )
 
 
 
