@@ -20,8 +20,8 @@ router.get('/', auth, (req, res, next) => {
 
 })
 
-router.get('/getClass/:cla_id', auth, (req, res, next) => {
-    Classes.find({ _id: req.params.cla_id })
+router.get('/getClass', auth, (req, res, next) => {
+    Classes.find({ _id: req.query.cla_id })
         .then((cla) => {
             return res.json(cla)
         })
@@ -32,8 +32,8 @@ router.get('/getClass/:cla_id', auth, (req, res, next) => {
 
 })
 
-router.get('/:code', auth, (req, res, next) => {
-    Classes.find({ code: req.params.code })
+router.get('/code', auth, (req, res, next) => {
+    Classes.find({ code: req.query.code })
         .then((cla) => {
             return res.json(cla)
         })
@@ -44,11 +44,40 @@ router.get('/:code', auth, (req, res, next) => {
 
 })
 
-router.post('/add/:code', auth, (req, res, next) => {
-    console.log(req.params.code)
+
+router.post('/schedule',auth,(req, res, next) => {
+    
+    const {title,start_time,end_time} = req.body;
+    const classfield = {
+        title,
+        start_time,
+        end_time
+    };
+
+    Classes.findOne({code:req.query.code})
+    .then((cla)=>{
+        
+        cla.details.unshift(classfield);
+        return cla.save()
+
+        .then((cla)=>{
+            return res.json(cla)
+    })
+    })
+
+    .catch(err => {
+        console.log(err.message);
+        res.status(500).send("server error")
+    })
+
+})
+
+
+router.post('/add', auth, (req, res, next) => {
+    console.log(req.query.code)
     const { selected_students } = req.body;
 
-    Classes.findOne({ code: req.params.code })
+    Classes.findOne({ code: req.query.code })
         .then((cla) => {
             User.findOne({ email: selected_students })
                 .then((user) => {
@@ -61,9 +90,6 @@ router.post('/add/:code', auth, (req, res, next) => {
                         return cla.save()
                     }
                 })
-
-
-
                 .then((cla) => {
                     return res.json(cla)
                 })
@@ -73,7 +99,6 @@ router.post('/add/:code', auth, (req, res, next) => {
             console.log(err.message);
             res.status(500).send("server error")
         })
-
 })
 
 
@@ -97,7 +122,6 @@ router.post('/', auth, (req, res, next) => {
 
                 return cla.save()
 
-
                     .then((cla) => {
                         console.log("Class created")
                         return res.json(cla)
@@ -113,6 +137,8 @@ router.post('/', auth, (req, res, next) => {
         })
 
 })
+
+
 
 
 

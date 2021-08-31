@@ -30,10 +30,10 @@ router.get('/students',(req,res,next)=>{
 
 })
 
-router.get('/students/:class_no',(req,res,next)=>{
+router.get('/student',(req,res,next)=>{
 
 
-    User.find({type:'student',class_in:req.params.class_no})
+    User.findOne({type:'student',class_in:req.query.class_no})
     .then((students)=>{
         return res.json(students)
     })

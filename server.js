@@ -18,7 +18,7 @@ app.use((req, res, next) => {
   });
 
 app.use('/api/users', usersRoute);
-app.use('/api/createclass',classRoute,)
+app.use('/api/createclass',classRoute)
 
 const PORT = 5000;
 

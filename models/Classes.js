@@ -21,8 +21,16 @@ const ClassesSchema = new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:'user'
     }],
-    time:[{
-        type:String,
+    details:[{
+        title:{
+            type:String
+        },
+        start_time:{
+            type:String
+        },
+        end_time:  {
+            type:String
+        }
     }]
 });
 
