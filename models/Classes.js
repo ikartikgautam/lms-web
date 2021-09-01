@@ -26,10 +26,10 @@ const ClassesSchema = new mongoose.Schema({
             type:String
         },
         start_time:{
-            type:String
+            type:Date
         },
         end_time:  {
-            type:String
+            type:Date
         }
     }]
 });

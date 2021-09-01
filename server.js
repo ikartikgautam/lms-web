@@ -20,6 +20,14 @@ app.use((req, res, next) => {
 app.use('/api/users', usersRoute);
 app.use('/api/createclass',classRoute)
 
+// if(process.env.NODE_ENV === 'production'){
+//   app.use(express.static('client/build'));
+
+//   app.get('*',(req,res)=>{
+//       res.sendFile(path.resolve(___dirname,'src','build','index.html'))
+//   })
+// }
+
 const PORT = 5000;
 
 app.listen(PORT, () => {
