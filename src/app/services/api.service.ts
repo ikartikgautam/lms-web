@@ -10,7 +10,7 @@ import { UserService } from './user.service';
 })
 export class ApiService {
 
-  _baseUrl = 'http://localhost:5000';
+  _baseUrl = 'http://flippr-api.herokuapp.com';
 
   constructor(private http: HttpClient, private userService: UserService, private fireStorage: AngularFireStorage) { }
 
